@@ -5,18 +5,41 @@ import java.util.Scanner;
 
 public class Main {
     private static final List<Movies> movies = JsonIO.getMovies();
-    private static SortAble s = (SortAble) new MovieStore();
-    private static FindAble f = (FindAble) new FindByMap();
+    private static MovieStore s = new MovieStore();
+    private static FindByMap f =  new FindByMap();
     private static Scanner in = new Scanner(System.in);
+    private static Scanner line = new Scanner(System.in);
 
     public static void main(String[] args) throws InputException {
-//        while (true) {
-//            start();
-//        }
+        commands();
+        int num = in.nextInt();
+        if (num == 1) {
+            for (Movies m : movies) {
+                System.out.println(m);
+            }
+        } else if (num == 2) {
+            System.out.println("Поиск: ");
+            String title = line.nextLine();
+            s.findMovie(movies,title);
+        } else if (num == 3) {
+            System.out.println("Годы выпуска фильмов: ");
+            s.sortByYear(movies);
+
+        }
+        else if (num == 4) {
+            System.out.println("Название фильмов: ");
+            s.sortByName(movies);
+
+        }
+        else if (num == 5) {
+            System.out.println("Режиссеры: ");
+            s.sortByDirector(movies);
+
+        }
     }
 
 
-    static void commads() {
+    static void commands() {
         System.out.println("--------------Commands-----------------------");
         System.out.println("Press 1 to print catalog");
         System.out.println("Press 2 to Find a Movie by full or part name");
