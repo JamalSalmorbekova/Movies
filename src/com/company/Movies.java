@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.models.Cast;
+
 import java.util.List;
 
 public class Movies {

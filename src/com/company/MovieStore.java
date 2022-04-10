@@ -12,6 +12,8 @@ public class MovieStore implements SortAble{
     }
 
 
+
+
     @Override
     public void findMovie(List<Movies> movies,String title) {
           movies.stream().map(Movies::getName).filter(name->name.contains(title)).forEach(System.out::println);
@@ -35,13 +37,10 @@ public class MovieStore implements SortAble{
 
     @Override
     public void sortByDirector(List<Movies> movies) {
-        Map<Director, List<Movies>> classificationListMap = movies.stream()
-                .collect(Collectors.groupingBy(Movies::getDirector));
-        classificationListMap.forEach((director, movies1) -> {
-            System.out.println(director);
-            movies1.forEach(System.out::println);
-            System.out.println();
-        });
+        Map<Director, List<Movies>> classificationListMap = movies.stream().collect(Collectors.groupingBy(Movies::getDirector));
+        List <Director> directors = new ArrayList<>();
+        directors.addAll(classificationListMap.keySet());
+        directors.stream().sorted(Comparator.comparing(Director::getFullName)).forEach(System.out::println);
 
     }
 }

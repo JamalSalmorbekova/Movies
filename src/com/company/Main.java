@@ -11,34 +11,49 @@ public class Main {
     private static Scanner line = new Scanner(System.in);
 
     public static void main(String[] args) throws InputException {
-        commands();
-        int num = in.nextInt();
-        if (num == 1) {
-            for (Movies m : movies) {
-                System.out.println(m);
+        while (true) {
+            commands();
+            int num = in.nextInt();
+            if (num == 1) {
+                for (Movies m : movies) {
+                    System.out.println(m);
+                }
+            } else if (num == 2) {
+                System.out.println("Search a movie: ");
+                String title = line.nextLine();
+                s.findMovie(movies, title);
+            } else if (num == 3) {
+                System.out.println("Годы выпуска фильмов: ");
+                s.sortByYear(movies);
+
+            } else if (num == 4) {
+                System.out.println("Название фильмов: ");
+                s.sortByName(movies);
+
+            } else if (num == 5) {
+                System.out.println("Режиссеры: ");
+                s.sortByDirector(movies);
+
+            } else if (num == 6) {
+                System.out.println("Введите имя актера: ");
+                String title = line.nextLine();
+                f.findMoviesByActor(movies, title);
+
+            } else if (num == 7) {
+                System.out.println("Введите имя режиссера: ");
+                String title = line.nextLine();
+                f.findMoviesByDirector(movies, title);
+            } else if (num == 8) {
+                f.findMoviesByYear(movies,getInt());
+            } else if (num == 9) {
+                System.out.println("Введите имя актера: ");
+                String title = line.nextLine();
+                f.findMoviesByActor(movies, title);
+            } else if (num == 10) {
+                f.showActorRoles(movies);
             }
-        } else if (num == 2) {
-            System.out.println("Поиск: ");
-            String title = line.nextLine();
-            s.findMovie(movies,title);
-        } else if (num == 3) {
-            System.out.println("Годы выпуска фильмов: ");
-            s.sortByYear(movies);
-
-        }
-        else if (num == 4) {
-            System.out.println("Название фильмов: ");
-            s.sortByName(movies);
-
-        }
-        else if (num == 5) {
-            System.out.println("Режиссеры: ");
-            s.sortByDirector(movies);
-
         }
     }
-
-
     static void commands() {
         System.out.println("--------------Commands-----------------------");
         System.out.println("Press 1 to print catalog");
@@ -51,7 +66,7 @@ public class Main {
         System.out.println("Press 8 to find movies by year");
         System.out.println("Press 9 to List all movies and roles by actor's name");
         System.out.println("Press 10 to sorted List of all actors with his roles");
-        System.out.println("---------------------------------------------");
+        System.out.println("---------------------------------------------\nChoose a number: ");
     }
 
     static int getInt() {
