@@ -31,7 +31,7 @@ public class Main {
                 s.sortByYear(movies);
 
             } else if (num == 4) {
-                System.out.println("Movies names: ");
+                System.out.println("Sorted Movies by names: ");
                 s.sortByName(movies);
 
             } else if (num == 5) {
@@ -54,6 +54,7 @@ public class Main {
                 String title = line.nextLine();
                 f.findMoviesByActor(movies, title);
             } else if (num == 10) {
+                System.out.println("Listed all actors with his roles: ");
                 f.showActorRoles(movies);
             }
         }
