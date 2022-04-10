@@ -1,5 +1,9 @@
 package com.company;
 
+import com.company.models.Movies;
+import com.company.service.FindByMap;
+import com.company.service.MovieStore;
+
 import java.util.List;
 import java.util.Scanner;
 
@@ -23,30 +27,30 @@ public class Main {
                 String title = line.nextLine();
                 s.findMovie(movies, title);
             } else if (num == 3) {
-                System.out.println("Годы выпуска фильмов: ");
+                System.out.println("Sorted by year: ");
                 s.sortByYear(movies);
 
             } else if (num == 4) {
-                System.out.println("Название фильмов: ");
+                System.out.println("Movies names: ");
                 s.sortByName(movies);
 
             } else if (num == 5) {
-                System.out.println("Режиссеры: ");
+                System.out.println("Sorted by Directors ");
                 s.sortByDirector(movies);
 
             } else if (num == 6) {
-                System.out.println("Введите имя актера: ");
+                System.out.println("Search by actor's name: ");
                 String title = line.nextLine();
                 f.findMoviesByActor(movies, title);
 
             } else if (num == 7) {
-                System.out.println("Введите имя режиссера: ");
+                System.out.println("Search by director's name: ");
                 String title = line.nextLine();
                 f.findMoviesByDirector(movies, title);
             } else if (num == 8) {
                 f.findMoviesByYear(movies,getInt());
             } else if (num == 9) {
-                System.out.println("Введите имя актера: ");
+                System.out.println("Search by actor's name: ");
                 String title = line.nextLine();
                 f.findMoviesByActor(movies, title);
             } else if (num == 10) {

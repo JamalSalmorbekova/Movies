@@ -1,4 +1,6 @@
-package com.company;
+package com.company.interfaces;
+
+import com.company.models.Movies;
 
 import java.util.List;
 

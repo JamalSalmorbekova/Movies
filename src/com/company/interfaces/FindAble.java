@@ -1,10 +1,12 @@
-package com.company;
+package com.company.interfaces;
+
+import com.company.models.Movies;
 
 import java.util.List;
 
 public interface FindAble {
 
-    void findMoviesByActor(List<Movies> movies,String actorName);
+    void findMoviesByActor(List<Movies> movies, String actorName);
 
     void findMoviesByDirector(List<Movies> movies,String directorName);
 

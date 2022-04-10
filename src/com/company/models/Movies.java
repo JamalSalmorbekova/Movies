@@ -1,6 +1,7 @@
-package com.company;
+package com.company.models;
 
 import com.company.models.Cast;
+import com.company.models.Director;
 
 import java.util.List;
 
@@ -43,12 +44,11 @@ public class Movies {
 
     @Override
     public String toString() {
-        return "Movies{" +
-                "name='" + name + '\'' +
-                ", year=" + year +
-                ", description='" + description + '\'' +
-                ", director=" + director +
-                ", cast=" + cast +
-                '}';
+        return "~~~~~~~~~~~~~~~~~~~~***~~~~~~~~~~~~~~~~~~\n"
+                +"Название фильма: "+ name + "\n" +
+                "Год выпуска: " + year +"\n"+
+                "Описание: " + description + "\n" +
+                "Режиссер: " + director +"\n"+
+                "В ролях: " + cast+"\n";
     }
 }

@@ -1,13 +1,15 @@
-package com.company;
+package com.company.service;
 
+import com.company.interfaces.FindAble;
 import com.company.models.Cast;
+import com.company.models.Movies;
 
 import java.util.*;
 
-public class FindByMap implements FindAble{
+public class FindByMap implements FindAble {
 
     @Override
-    public void findMoviesByActor(List<Movies> movies,String actorName) {
+    public void findMoviesByActor(List<Movies> movies, String actorName) {
         movies.stream().filter(movies1 -> movies1.getCast().stream().anyMatch(cast -> cast.getFullName()
                         .equalsIgnoreCase(actorName)))
                 .forEach(System.out::println);

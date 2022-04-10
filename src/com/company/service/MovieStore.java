@@ -1,10 +1,13 @@
-package com.company;
+package com.company.service;
+
+import com.company.interfaces.SortAble;
+import com.company.models.Director;
+import com.company.models.Movies;
 
 import java.util.*;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 
-public class MovieStore implements SortAble{
+public class MovieStore implements SortAble {
 
     @Override
     public void printAllMovies(List<Movies> movies) {
@@ -23,7 +26,7 @@ public class MovieStore implements SortAble{
 
     @Override
     public void sortByYear(List<Movies> movies) {
-       movies.stream().map(Movies::getYear).sorted().forEach(System.out::println);
+       movies.stream().sorted(Comparator.comparing(Movies::getYear)).forEach(System.out::println);
 
 
     }

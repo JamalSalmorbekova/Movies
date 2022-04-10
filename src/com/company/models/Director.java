@@ -1,4 +1,4 @@
-package com.company;
+package com.company.models;
 
 public class Director {
 
@@ -10,9 +10,7 @@ public class Director {
 
     @Override
     public String toString() {
-        return "Director{" +
-                "fullName='" + fullName + '\'' +
-                '}';
+        return "Режиссер: " + fullName;
     }
 }
 

@@ -15,9 +15,7 @@ public class Cast {
 
     @Override
     public String toString() {
-        return "Cast{" +
-                "fullName='" + fullName + '\'' +
-                ", role='" + role + '\'' +
-                '}';
+        return "\nИмя актера: " + fullName  +
+                "\nРоль в фильме: " + role;
     }
 }
